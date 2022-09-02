@@ -1,0 +1,107 @@
+<link rel='stylesheet' href='/stylesheets/style.css' />
+<%- include('./partials/header') %>
+<header class="header" >
+  <div class="container">
+    <div class="container2"></div>
+    <div class="header-search">
+      <input type="search" name="search" placeholder="Search Product..." class="input-field">
+      <button class="search-butn" aria-label="Search">
+        <ion-icon name="search-outline"></ion-icon>
+      </button>
+    </div>
+
+   
+    
+    <div class="header-actions">
+      <button class="header-action-butn">
+        <ion-icon name="person-outline" ></ion-icon>
+        <a href="/auth/google"><i class="header-action-label"></i>Sign in</a>
+
+      </button>
+      <button class="header-action-butn">
+        <ion-icon name="storefront-outline" ></ion-icon>
+        <a href="/items"><p class="header-action-label">My items</p></a>
+      </button>
+      <button class="header-action-butn">
+        <ion-icon name="bag-add-outline"></ion-icon>
+        <a href="/items/new"><p class="header-action-label">Sell item</p></a>
+      </button>
+    </div>
+</header>
+<main>
+  <section class="banner" id="home">
+    <div class="container">
+      <div class="banner-content">
+        <p class="banner-subtitle">Sell</p>
+        <p class="banner-subtitle">YOUR STUFF &</p>
+        <p class="banner-subtitle">BAG A</p>
+        <p class="banner-subtitle">BARGAIN</p>
+        <a href="/items/new"><button class="butn-first">Tradie it!</button></a>
+      </div>
+    </div>
+  </section>
+
+  
+<section class="section cate">
+  <div class="container">
+    <h2 class="popular">Popular Categories</h2>
+    <ul class="cate-list">
+      <li class="cate-item">
+        <figure class="cate-banner">
+          <img src= "./images/Home.png" alt="home" width="500" height="600">
+        </figure>
+        <a href="#" class="butn-secondary">Home & Furniture</a>
+      </li>
+
+      <li class="cate-item">
+        <figure class="cate-banner">
+          <img src="./images/Beauty.png" alt="beauty" width="500" height="600">
+        </figure>
+        <a href="#" class="butn butn-secondary">Beauty</a>
+      </li>
+
+      <li class="cate-item">
+        <figure class="cate-banner">
+          <img src="./images/Kids.png" alt="kids" width="500" height="600">
+        </figure>
+        <a href="#" class="butn-secondary">Kids</a>
+      </li>
+
+      <li class="cate-item">
+        <figure class="cate-banner">
+          <img src="./images/men.png" alt="men"  width="500" height="600" class=>
+        </figure>
+        <a href="#" class="butn-secondary">Men</a>
+      </li>
+
+      <li class="cate-item">
+        <figure class="cate-banner">
+          <img src="./images/Women.png" alt="women"  width="500" height="600">
+        </figure>
+        <a href="#" class="butn-secondary">Women</a>
+      </li>
+
+      <li class="cate-item">
+        <figure class="cate-banner">
+          <img src="./images/Sports.png" alt="Sports" width="500" height="600">
+        </figure>
+        <a href="#" class="butn-secondary">Sports & outdoors</a>
+      </li>
+
+      <li class="cate-item">
+        <figure class="cate-banner">
+          <img src="./images/Vintage.png" alt="vintage" width="500" height="600">
+        </figure>
+        <a href="#" class="butn-secondary">Vintage & Collectives</a>
+      </li>
+
+    </ul>
+
+  </div>
+</section>
+
+</main>
+
+
+
+<%- include('./partials/footer') %>

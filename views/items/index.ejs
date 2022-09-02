@@ -1,0 +1,11 @@
+<%- include('../partials/header') %>
+<h1><%= title %></h1>
+
+<% items.forEach(function(item) { %> 
+    <div>Product Name: <%= item.productName %></div>
+    <div>Brand: <%= item.brand %></div>
+    <div>Size: <%= item.size %></div>
+    <a href="/items/<%= item.id %>">Detail</a>
+<%   }); %> 
+
+<%- include('../partials/footer') %>

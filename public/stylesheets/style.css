@@ -1,0 +1,182 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+  
+
+li { 
+  list-style: none; 
+  }
+
+
+a { 
+  text-decoration: none; 
+  }
+
+.ion-icon{
+  cursor: pointer;
+}
+
+input,
+button {
+  background: none;
+  border: none;
+  font: inherit;
+}
+
+button {
+  text-align: left;
+  cursor: pointer;
+  display:block;
+}
+
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: white;
+  width: 100%;
+  padding-block: 20px;
+  z-index: 4;
+  transition: 0.25s;
+  }
+
+  
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container2 {
+  position: fixed;
+  inset: 0;
+  background: black;
+  opacity: 0;
+  pointer-events: none;
+  transition:0.25s;
+  z-index: 2;
+}
+
+.container2.active {
+  opacity: 0.7;
+  pointer-events: all;
+}
+
+.input-field {
+  border: 1px solid hsla(0, 0%, 0%, 0.1);
+  width: 280px;
+  padding: 12px 30px;
+  border-radius: 6px;
+  transition: 0.35s;
+  position: relative;
+  padding-top: 0;
+}
+
+.header-actions {
+  background: white;
+  top: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 5px;
+  padding-block: 16px 10px;
+ 
+  pointer-events: all;
+}
+.header-search{
+  align-items: center;
+  display: flex;
+}
+.header-search .search-butn{
+  width: 50%;
+  margin:  0 auto;
+  display: block;
+  position: relative;
+  width: max-content;
+}
+
+.header-action-butn {
+  position: relative;
+  width: 50px;
+  text-align: center;
+}
+
+.header-action-butn:hover{
+  background-color: cadetblue;
+  cursor: pointer;
+}
+
+.header-action-butn ion-icon {
+  margin-inline: auto;
+  font-size: 22px;
+  margin-bottom: 3px;
+}
+
+
+
+.banner {
+  background-color:cadetblue;
+  width: 100%;
+  min-height: 80vh;
+  padding-block: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.banner .container { 
+  margin-top:80px;
+  width: 100%; 
+  align-items: center;
+}
+
+.banner-subtitle {
+  color: black;
+  font-size: 50px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  margin-left: 40px;
+  align-items: center;
+}
+
+.banner-title {
+  margin-bottom: 35px;
+  max-width: 12ch;
+}
+
+
+.cate-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.popular{
+  text-align: center;
+  font-size: 3.5rem;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  color: darkgrey;
+}
+.butn-first {
+  height: 50px;
+  background: white;
+  border-color:white;
+  border-radius: 15%;
+  align-items: center;
+  margin:auto;
+  color: cadetblue;
+  padding: 10px;
+  margin-top: 60px;
+}
+
+.input-field{
+  text-align: center;
+  margin: auto;
+  padding: auto;
+}
