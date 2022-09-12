@@ -57,3 +57,28 @@ form ul {
     margin-left: 200px;
 }
 
+.h1-item{
+   font-size: 50px;
+   align-items: center;
+}
+
+.items-header{
+   text-align: center;
+   width: 100%;
+}
+
+.more-info{
+    border-bottom: 30px;
+    padding-bottom: 30px;
+    border-left: 50px;
+}
+
+.new-line{
+    width:100%
+    
+}
+
+.products_items{
+    border-left: 50px;
+   width: 100%;
+}

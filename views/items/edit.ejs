@@ -1,0 +1,93 @@
+<link rel='stylesheet' href='/stylesheets/styleadd.css' >
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma-rtl.min.css">
+<%- include('../partials/header') %>
+<p id = 'instructionTitle'> Instructions:</p>
+<div class = 'instru'><p id = 'instruction'>The more detailed information you provide, the faster you can find the buyer you need for your item. We always recommend providing more information as possible.</p></div>
+<form id="new-form" action="/items" method="POST">
+  <ul>
+    <li>
+    <label class="attributes">Product Name:</label>
+    <input type="text" name="productName" ></li>
+
+    <li>
+    <label class="attributes">Brand:</label>
+    <input type="text" name="brand"></li>
+
+    <li>
+    <label class="attributes">Size:</label>
+    <input type="text" name="size"></li>
+
+    <li>
+    <label class="attributes">Quality Level:</label>
+    <select name="qualityLevel">
+        <option value="99%">99% new</option>
+        <option value="85%">85% new </option>
+        <option value="60%">60% new</option>
+        <option value="50%">50% new</option>
+      </select></li>
+
+    <li>
+    <label class="attributes">Reasons to Sell:</label>
+    <input type="text" name="reasons"></li>
+
+    <li>
+    <label class="attributes">Location</label>
+    <input type="text" name="location"></li>
+
+    <li>
+    <label class="attributes">Category</label>
+    <select name="category">
+        <option value="Home&furniture">Home & Furniture</option>
+        <option value="Beauty">Beauty </option>
+        <option value="Sports&outdoors">Sports & Outdoors</option>
+        <option value="Vintage&collectibles">Vintage & Collectibles</option>
+        <option value="Women">Women</option>
+        <option value="Men">Men</option>
+        <option value="Kids">Kids</option>
+        <option value="Others">Others</option>
+      </select></li>
+
+    <li>
+    <label class="attributes">Price you want to Sell:</label>
+    <input type="number" name="price" placeholder="Amount of money"></li>
+
+    <li>
+    <label class="attributes">Other information you want to mention:</label>
+    <textarea class="textarea" placeholder="Add more details"></textarea></li>
+  
+
+    <li>
+    <label class="attributes">Now stutus(Sold or not):</label>
+    <input type="checkbox" name="status" unchecked></li>
+
+    <li class="butn-new">
+    <button class="subAll"><a>Update a new item </a></button></li>
+
+  </ul>
+
+  <!-- <div class="file is-warning is-boxed">
+    <label class="file-label">
+      <input class="file-input" type="file" name="resume">
+      <span class="file-cta">
+        <span class="file-icon">
+          <i class="fas fa-cloud-upload-alt"></i>
+        </span>
+        <span class="file-label">
+          Choose image
+        </span>
+      </span>
+    </label>
+  </div> -->
+  
+  </form>
+
+  <form action="/items/upload" method="POST" enctype="multipart/form-data">
+    <input type="file" name='image'>
+    <button><a>Submit</a></button>
+  </form>
+  
+<%- include('../partials/footer') %>
