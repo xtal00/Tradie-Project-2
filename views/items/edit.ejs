@@ -11,19 +11,19 @@
   <ul>
     <li>
     <label class="attributes">Product Name:</label>
-    <input type="text" name="productName" ></li>
+    <input type="text" name="productName" value="<%=item.productName%>"></li>
 
     <li>
     <label class="attributes">Brand:</label>
-    <input type="text" name="brand"></li>
+    <input type="text" name="brand"  value="<%=item.brand%>"></li>
 
     <li>
     <label class="attributes">Size:</label>
-    <input type="text" name="size"></li>
+    <input type="text" name="size" value="<%=item.size%>"></li>
 
     <li>
     <label class="attributes">Quality Level:</label>
-    <select name="qualityLevel">
+    <select name="qualityLevel" value="<%=item.qualityLevel%>">
         <option value="99%">99% new</option>
         <option value="85%">85% new </option>
         <option value="60%">60% new</option>
@@ -32,15 +32,15 @@
 
     <li>
     <label class="attributes">Reasons to Sell:</label>
-    <input type="text" name="reasons"></li>
+    <input type="text" name="reasons" value="<%=item.reasons%>"></li>
 
     <li>
     <label class="attributes">Location</label>
-    <input type="text" name="location"></li>
+    <input type="text" name="location" value="<%=item.location%>"></li>
 
     <li>
     <label class="attributes">Category</label>
-    <select name="category">
+    <select name="category" value="<%=item.category%>">
         <option value="Home&furniture">Home & Furniture</option>
         <option value="Beauty">Beauty </option>
         <option value="Sports&outdoors">Sports & Outdoors</option>
@@ -53,36 +53,25 @@
 
     <li>
     <label class="attributes">Price you want to Sell:</label>
-    <input type="number" name="price" placeholder="Amount of money"></li>
+    <input type="number" name="price" placeholder="Amount of money" value="<%=item.price%>"></li>
 
     <li>
     <label class="attributes">Other information you want to mention:</label>
-    <textarea class="textarea" placeholder="Add more details"></textarea></li>
+    <textarea class="textarea" placeholder="Add more details" value="<%=item.notes%>"></textarea></li>
   
 
     <li>
     <label class="attributes">Now stutus(Sold or not):</label>
-    <input type="checkbox" name="status" unchecked></li>
+    <input type="checkbox" name="status" unchecked  value="<%=item.status%>"></li>
 
     <li class="butn-new">
-    <button class="subAll"><a>Update a new item </a></button></li>
-
+      <form action="/items/<%=item.id%>/edit" method="get">
+        <button type="submit">
+            <span class="material-icons">Update</span>
+        </button>
+      </form>
+    </li>
   </ul>
-
-  <!-- <div class="file is-warning is-boxed">
-    <label class="file-label">
-      <input class="file-input" type="file" name="resume">
-      <span class="file-cta">
-        <span class="file-icon">
-          <i class="fas fa-cloud-upload-alt"></i>
-        </span>
-        <span class="file-label">
-          Choose image
-        </span>
-      </span>
-    </label>
-  </div> -->
-  
   </form>
 
   <form action="/items/upload" method="POST" enctype="multipart/form-data">

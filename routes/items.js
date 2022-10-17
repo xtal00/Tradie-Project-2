@@ -10,9 +10,10 @@ router.get('/', itemsCtrl.index);
 router.get('/new', itemsCtrl.new);
 router.get('/:id', itemsCtrl.show);
 router.post('/', itemsCtrl.create);
-router.delete('/:id', itemsCtrl.delete);
 router.get('/:id/edit', itemsCtrl.edit);
-router.put('/:id', itemsCtrl.update);
+
+router.delete('/:id', itemsCtrl.delete);
+
 
 router.post('/upload', upload.single('image'), uploadCtrl.upload)
 

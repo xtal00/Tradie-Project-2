@@ -8,35 +8,7 @@ module.exports = {
   create,
   delete: deleteItem,
   edit,
-  update
 };
-function update(req, res) {
-    req.body.done = req.body.done === 'on';
-    // The following will also do the job
-    // req.body.done = !!req.body.done;
-    Item.updateOne(req.params.id, req.body);
-    res.redirect('/items');
-  }
-
-  function updateOne(id, item) {
-    // Find the index based on the id of the item object
-    const idx = items.findIndex(item => item.id === parseInt(id));
-    // Ensure the id is copied over
-    item.id = parseInt(id);
-    items.splice(idx, 1, item);
-  }
-  
-  function edit(req, res) {
-    res.render('items/edit', {
-      item: Item.getOne(req.params.id)
-    });
-  }
-  
-  function deleteItem(req, res) {
-    Item.deleteOne(req.params.id);
-    res.redirect('/items');
-  }
-
 
 function index(req, res) {
   Item.find({}, function(err, items) {
@@ -44,15 +16,55 @@ function index(req, res) {
   });
 }
 
-function show(req, res) {
-  Item.findById(req.params.id, function(err, item) {
-    res.render('items/show', { title: 'Item Detail', item });
+
+function edit(req, res) {
+  Item.findOne({_id: req.params.id}, function(err, item){
+    res.render('items/edit',{
+        item,
+        user: req.user
+    })
     console.log(item)
-  });
+  
+})
+  }
+  
+  function deleteItem(req, res) {
+    Item.findOne({_id: req.params.id}, function(err, item){
+      item.remove();
+      item.save(function(err){
+          res.redirect('/items')
+      })
+  })
+
+  }
+
+
+function show(req, res) {
+  let modelQuery = req.query.name ? {name: new RegExp(req.query.name, 'i')} : {};
+    let sortKey = req.query.sort || 'name';
+
+    Item.find(modelQuery)
+    .sort(sortKey).exec(function(err, users){
+      Item.findById(req.params.id, function(err, item){
+            res.render('items/show', {
+                item,
+                user: req.user
+            })
+        })
+    })
 }
 
 function newItem(req, res) {
-  res.render('items/new', { title: 'Add Item' });
+  let modelQuery = req.query.name ? {name: new RegExp(req.query.name, 'i')} : {};
+    let sortKey = req.query.sort || 'name';
+    Item.find(modelQuery)
+    .sort(sortKey).exec(function(err, users){
+        if(err) return next(err);
+        res.render('items/new', {
+            user: req.user,
+            name: req.query.name
+        });
+    }) 
 }
 
 function create(req, res) {
@@ -63,7 +75,6 @@ function create(req, res) {
   item.save(function(err) {
     // one way to handle errors
     if (err) return res.redirect('/items/new');
-    console.log(item);
     // for now, redirect right back to new.ejs
     res.redirect('/items');
   });

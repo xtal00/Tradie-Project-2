@@ -1,9 +1,8 @@
 var express = require('express');
 var router = express.Router();
+var reviewsCtrl = require('../controllers/comments');
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+router.post('/:id/comments', reviewsCtrl.create);
+router.delete('/:id', reviewsCtrl.delete);
 
 module.exports = router;

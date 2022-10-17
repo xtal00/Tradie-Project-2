@@ -18,10 +18,16 @@
     
  <section class="section product">
     <div class="container">
-
-        <a href="/items/:id/edit"><button class="btn btn-outline">Update</button></a>
-        <button class="btn btn-outline">Delete</button>
-
+        <form action="/items/<%=item.id%>/edit" method="get">
+            <button type="submit">
+                <span class="material-icons">Update</span>
+            </button>
+        </form>
+        <form action="/items/<%=item.id%>?_method=Delete" method="post">
+            <button type="submit">
+                <span class="material-icons">delete</span>
+            </button>
+        </form>
     </div>
 </section>
 <%- include('../partials/footer') %>
